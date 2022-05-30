@@ -1,0 +1,32 @@
+global:
+    debug : false
+    image_path : /mnt/disk2/dangnh/CLIP/flickr30k_images/flickr30k_images
+    label_path : /mnt/disk2/dangnh/CLIP/flickr30k_images/results.csv
+    captions_path : /mnt/disk2/dangnh/CLIP/flickr30k_images/captions.csv
+    batch_size : 32
+    num_workers : 8
+    head_lr : 1e-3
+    weight_decay : 1e-3
+    patience : 1
+    factor : 0.8
+    epochs : 20
+    pretrained : true
+    trainable : true
+    temperature : 1.0
+
+image_encoder:
+    model_name : resnet50
+    image_size : 224
+    image_encoder_lr : 1e-4
+text_encoder:
+    text_encoder_model : distilbert-base-uncased
+    text_embedding : 768
+    text_tokenizer : distilbert-base-uncased
+    max_length : 200
+    text_encoder_lr : 1e-5
+projection_head:
+    image_embedding : 2048
+    num_projection_layers : 1
+    projection_dim : 256 
+    drop_rate : 0.1
+
